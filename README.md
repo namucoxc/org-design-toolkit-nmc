@@ -1,16 +1,24 @@
 # org-design-toolkit
 
-> 🏢 中小企业组织设计交付物生成器 · Claude AI Skill
+> 🏢 中小企业组织设计交付物生成器 · **跨平台 AI Agent / LLM 通用工具**
 >
 > 通过 5 轮结构化对话，自动产出三张分工矩阵 + 工作分析表合集 + 组织设计预览，把咨询师从 2-4 小时格式劳动中解放出来。
+>
+> ✨ **原生支持 Claude Code**，**同时可移植到 Cursor / Cline / ChatGPT GPTs / 本地 LLM** 等任意 AI Agent 平台。详见 [PORTABILITY.md](./PORTABILITY.md)。
 
-![version](https://img.shields.io/badge/version-2.0.3-blue) ![license](https://img.shields.io/badge/license-MIT-green) ![status](https://img.shields.io/badge/status-stable-success) ![language](https://img.shields.io/badge/language-zh--CN-orange)
+![version](https://img.shields.io/badge/version-2.0.4-blue) ![license](https://img.shields.io/badge/license-MIT-green) ![status](https://img.shields.io/badge/status-stable-success) ![language](https://img.shields.io/badge/language-zh--CN-orange) ![portable](https://img.shields.io/badge/AI--portable-Cursor%20%7C%20Cline%20%7C%20GPTs%20%7C%20Ollama-purple)
 
 ---
 
 ## ✨ 这是什么？
 
-`org-design-toolkit` 是一个面向**中小企业组织咨询**场景的 Claude AI Skill，把组织设计中最耗时的"格式劳动"——填矩阵、写工作分析表、画组织图——交给 AI 完成。咨询师专注于现场判断、权力博弈和决策。
+`org-design-toolkit` 是一个面向**中小企业组织咨询**场景的 **AI Agent 工具包**——把组织设计中最耗时的"格式劳动"（填矩阵、写工作分析表、画组织图）交给 AI 完成，咨询师专注于现场判断、权力博弈和决策。
+
+**核心是与平台无关的方法论 + Prompt 模板**：
+
+- 📘 **方法论**：10 项设计原则 / 7 道质量闸 / 5 轮融合对话流程
+- 🏭 **行业事项库**：精品包装 / 外贸出口 / 化工 / 食品 / 零售连锁 / 项目型 / 双工厂 7 大子行业模板
+- 🤖 **多平台适配**：Claude Code 原生 + Cursor / Cline / ChatGPT GPTs / 本地 LLM 全兼容
 
 ### 🎯 解决什么问题
 
@@ -38,25 +46,48 @@
 
 ## 🚀 快速开始
 
-### 安装
+### 7 种平台 · 选择您的接入方式
 
-#### 方式 A · Claude Code Plugin Marketplace（推荐）
+| 平台 | 难度 | 推荐场景 |
+|---|---|---|
+| **Claude Code**（原生） | ★ | 全功能体验、含 AskUserQuestion 多选交互 |
+| **Claude Desktop**（Project） | ★ | 不会编程的咨询师 |
+| **Cursor** / **Cline** | ★★ | 已用 VS Code/Cursor 的开发者 |
+| **ChatGPT GPTs** | ★★★ | ChatGPT Plus 用户 |
+| **本地 LLM**（Ollama 等） | ★★★ | 数据不出本地需求 |
+| **通用 Prompt** | ★ | 任意 LLM 一次性使用 |
+
+完整接入说明见 **[PORTABILITY.md](./PORTABILITY.md)**。
+
+### Claude Code 原生安装（最佳体验）
 
 ```bash
+# 方式 A：Plugin Marketplace
 claude plugins install org-design-toolkit
-```
 
-#### 方式 B · 手动放置
-
-```bash
-# 克隆仓库
-git clone https://github.com/<your-org>/org-design-toolkit.git
-
-# 复制到 Claude Code skills 目录
-cp -r org-design-toolkit ~/.claude/skills/
-
+# 方式 B：手动放置
+git clone https://github.com/<your-org>/org-design-toolkit.git ~/.claude/skills/org-design-toolkit
 # 重启 Claude Code
 ```
+
+### Cursor / Cline 接入（30 秒）
+
+把整个仓库复制到项目根目录 `./skill-bundle/`，在 `.cursorrules` 添加：
+
+```
+你是组织咨询师的 AI 副驾驶。当用户说"做分工矩阵"时，按 ./skill-bundle/SKILL.md 方法论执行。
+```
+
+详见 [PORTABILITY.md §四 Cursor](./PORTABILITY.md#四cursor)。
+
+### ChatGPT GPTs 接入（5 分钟）
+
+1. 创建 Custom GPT
+2. Instructions 粘贴 `SKILL.md` 主体
+3. Knowledge Files 上传 `prompts/dialogue.md` + `references/*.md`
+4. 开启 Code Interpreter
+
+详见 [PORTABILITY.md §六 ChatGPT](./PORTABILITY.md#六chatgpt自定义-gpt--custom-gpt)。
 
 ### 第一次使用
 
@@ -75,7 +106,7 @@ your-project/
 做一份 [企业简称] 的分工矩阵和工作分析表
 ```
 
-3. skill 会自动 10 轮对话采集信息，5 分钟内输出 8 份文件。
+3. skill 会自动 5 轮对话采集信息，5 分钟内输出 8 份文件（v2.0.3 起从 10 轮简化为 5 轮融合版）。
 
 ### 输出文件
 
@@ -117,6 +148,7 @@ org-design-toolkit/
 ├── LICENSE                            # MIT
 ├── CONTRIBUTING.md                    # 贡献指南
 ├── CODE_OF_CONDUCT.md                 # 行为准则
+├── PORTABILITY.md                     # 跨 Agent/LLM 移植指南（7 个平台）★
 ├── DEMO_SCRIPT.md                     # 技术演示视频脚本（2-3 分钟）
 ├── MARKETING_VIDEO_SCRIPT.md          # 推广视频脚本（15s / 30s / 60s · 4 平台）
 ├── TRIGGERS.md                        # 触发词系统（主/弱/反/协作触发）
@@ -149,10 +181,13 @@ org-design-toolkit/
 
 ## 📅 版本路线图
 
-- **v2.0.1** ⭐ 当前：5 个子行业模板 + dialogue.md + 完整社区文档
+- **v2.0.4** ⭐ 当前：跨 Agent/LLM 移植指南 + 平台无关定位
+- v2.0.3：10 轮 → 5 轮融合 + 3 轮极简
+- v2.0.2：推广运营文档（MARKETING_VIDEO_SCRIPT + TRIGGERS）
+- v2.0.1：完整社区文档（LICENSE / CONTRIBUTING / .github / 7 个子行业模板）
 - v2.1 计划：补医疗 / 教育 / IT 服务三个子行业
-- v2.2 计划：接入绩效系统、薪酬系统的下游模块
-- v3.0 计划：组织变革模拟器（多版本对比）
+- v2.2 计划：接入绩效系统、薪酬系统下游模块
+- v3.0 计划：组织变革模拟器（多版本对比）+ adapters/ 各平台原生适配器
 
 详见 [CHANGELOG.md](./CHANGELOG.md)。
 
