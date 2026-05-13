@@ -2,9 +2,9 @@
 
 > 🏢 中小企业组织设计交付物生成器 · Claude AI Skill
 >
-> 通过 10 轮结构化对话，自动产出三张分工矩阵 + 工作分析表合集 + 组织设计预览，把咨询师从 2-4 小时格式劳动中解放出来。
+> 通过 5 轮结构化对话，自动产出三张分工矩阵 + 工作分析表合集 + 组织设计预览，把咨询师从 2-4 小时格式劳动中解放出来。
 
-![version](https://img.shields.io/badge/version-2.0.2-blue) ![license](https://img.shields.io/badge/license-MIT-green) ![status](https://img.shields.io/badge/status-stable-success) ![language](https://img.shields.io/badge/language-zh--CN-orange)
+![version](https://img.shields.io/badge/version-2.0.3-blue) ![license](https://img.shields.io/badge/license-MIT-green) ![status](https://img.shields.io/badge/status-stable-success) ![language](https://img.shields.io/badge/language-zh--CN-orange)
 
 ---
 

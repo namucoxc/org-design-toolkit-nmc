@@ -9,7 +9,7 @@
 打开 macOS Terminal，复制并执行：
 
 ```bash
-cd ~/Desktop/cs-workspace/projects/金叠利包装/skill源码/org-design-toolkit-public/ && bash publish.sh
+cd ~/your-project-path/org-design-toolkit/ && bash publish.sh
 ```
 
 脚本会自动完成 7 步：
@@ -171,7 +171,7 @@ git tag -d v2.0.2
 ### Q5：怎么后续更新代码？
 
 ```bash
-cd ~/Desktop/cs-workspace/projects/金叠利包装/skill源码/org-design-toolkit-public/
+cd ~/your-project-path/org-design-toolkit/
 git add .
 git commit -m "fix: 修复 xxx"
 git push
@@ -208,7 +208,7 @@ gh release create v2.0.2 \
 
 ```bash
 gh release upload v2.0.2 \
-  ~/Desktop/cs-workspace/projects/金叠利包装/org-design-toolkit-v2.0.2-public.zip
+  ~/your-project-path/org-design-toolkit-v2.0.2-public.zip
 ```
 
 ### 5.3 在 README.md 加 Star 引导
