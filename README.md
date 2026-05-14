@@ -2,11 +2,11 @@
 
 > 🏢 中小企业组织设计交付物生成器 · **跨平台 AI Agent / LLM 通用工具**
 >
-> 通过 5 轮结构化对话，自动产出三张分工矩阵 + 工作分析表合集 + 组织设计预览，把咨询师从 2-4 小时格式劳动中解放出来。
+> 通过 2 轮极简对话（仅需 2 个输入：流程+行业），自动产出三张分工矩阵 + 工作分析表合集 + 组织设计预览，把咨询师从 2-4 小时格式劳动中解放出来。
 >
 > ✨ **原生支持 Claude Code**，**同时可移植到 Cursor / Cline / ChatGPT GPTs / 本地 LLM** 等任意 AI Agent 平台。详见 [PORTABILITY.md](./PORTABILITY.md)。
 
-![version](https://img.shields.io/badge/version-2.0.4-blue) ![license](https://img.shields.io/badge/license-MIT-green) ![status](https://img.shields.io/badge/status-stable-success) ![language](https://img.shields.io/badge/language-zh--CN-orange) ![portable](https://img.shields.io/badge/AI--portable-Cursor%20%7C%20Cline%20%7C%20GPTs%20%7C%20Ollama-purple)
+![version](https://img.shields.io/badge/version-2.0.5-blue) ![license](https://img.shields.io/badge/license-MIT-green) ![status](https://img.shields.io/badge/status-stable-success) ![language](https://img.shields.io/badge/language-zh--CN-orange) ![portable](https://img.shields.io/badge/AI--portable-Cursor%20%7C%20Cline%20%7C%20GPTs%20%7C%20Ollama-purple)
 
 ---
 
@@ -16,7 +16,7 @@
 
 **核心是与平台无关的方法论 + Prompt 模板**：
 
-- 📘 **方法论**：10 项设计原则 / 7 道质量闸 / 5 轮融合对话流程
+- 📘 **方法论**：10 项设计原则 / 7 道质量闸 / **2 轮极简对话**（仅需 2 个输入：流程+行业）
 - 🏭 **行业事项库**：精品包装 / 外贸出口 / 化工 / 食品 / 零售连锁 / 项目型 / 双工厂 7 大子行业模板
 - 🤖 **多平台适配**：Claude Code 原生 + Cursor / Cline / ChatGPT GPTs / 本地 LLM 全兼容
 
@@ -24,7 +24,7 @@
 
 | 传统做法 | 用 org-design-toolkit |
 |---|---|
-| 咨询师手填 10 部门 × 80 项 RACI 矩阵，2-4 小时 | 10 轮对话后自动生成，5 分钟 |
+| 咨询师手填 10 部门 × 80 项 RACI 矩阵，2-4 小时 | 2 轮对话后自动生成，5-10 分钟 |
 | 工作分析表 15 张，每张手写一天 | 全自动生成，逐张定制 |
 | 矩阵与岗位说明书人工对账 | 七道质量闸自动校验一致性 |
 | 重做 1 版要重填一次 | 增量迭代机制（v1→v2→v3 + 差异报告） |
@@ -106,7 +106,7 @@ your-project/
 做一份 [企业简称] 的分工矩阵和工作分析表
 ```
 
-3. skill 会自动 5 轮对话采集信息，5 分钟内输出 8 份文件（v2.0.3 起从 10 轮简化为 5 轮融合版）。
+3. skill 会自动 2 轮极简对话采集信息（仅需提供「经营创利流程」+「行业」2 个核心输入），5-10 分钟内输出 8 份文件。
 
 ### 输出文件
 
@@ -181,7 +181,8 @@ org-design-toolkit/
 
 ## 📅 版本路线图
 
-- **v2.0.4** ⭐ 当前：跨 Agent/LLM 移植指南 + 平台无关定位
+- **v2.0.5** ⭐ 当前：输入极简化（2 输入 + 1 review · 5-10 分钟）
+- v2.0.4：跨 Agent/LLM 移植指南 + 平台无关定位
 - v2.0.3：10 轮 → 5 轮融合 + 3 轮极简
 - v2.0.2：推广运营文档（MARKETING_VIDEO_SCRIPT + TRIGGERS）
 - v2.0.1：完整社区文档（LICENSE / CONTRIBUTING / .github / 7 个子行业模板）
