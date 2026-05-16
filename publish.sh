@@ -163,8 +163,11 @@ fi
 # === 6. 推送代码 ===
 step "6/7 · 推送代码到 GitHub"
 
-# 用 --force-with-lease：本地是 rm -rf .git 重新初始化的孤立快照，无远程祖先。
-# --force-with-lease 比 --force 安全：若远程被他人推过则拒绝。
+# 本地是 rm -rf .git 重新初始化的孤立快照，无 origin/main 跟踪引用。
+# 先 fetch 让 --force-with-lease 有对照物，避免 'stale info' 拒推。
+git fetch origin main 2>/dev/null || true
+
+# --force-with-lease 比 --force 安全：若 fetch 后远程又被他人推过则拒绝。
 git push -u origin main --force-with-lease
 ok "代码已推送"
 
