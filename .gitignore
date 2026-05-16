@@ -1,0 +1,55 @@
+# macOS
+.DS_Store
+._.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Python（如果用 Python 脚本生成）
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.pytest_cache/
+.coverage
+.tox/
+
+# 用户私有数据（防止误提交）
+**/客户/
+**/项目/
+**/private/
+**/_私有/
+**/_internal/
+
+# 临时构建文件
+_build_*.py
+*.bak
+*.tmp
+
+# 输出包
+*.zip
+*.tar.gz
+
+# Office 临时文件
+~$*
+.~lock.*
+
+# Node（如果未来引入）
+node_modules/
+package-lock.json
